@@ -53,19 +53,3 @@ btn.addEventListener("click",()=>{
     weather(input.value);
 })
 
-// btn.addEventListener("click", async (city)=>{
-
-    // let temp = document.querySelector(".temp");
-    // let cityname = document.querySelector(".cityname");
-    // let humidity = document.querySelector(".humidity");
-    // let wind = document.querySelector(".wind");
-
-    // let response = await fetch(apiurl + city + `&appid=${apikey}`);
-    // let data = await response.json();
-    // console.log(data);
-    // temp.innerHTML=data.main.temp + "°C";
-    // cityname.innerHTML=data.name;
-    // humidity.innerHTML=data.main.humidity + "% <br> Humidity";
-    // wind.innerHTML=data.wind.speed + "Km/h <br> Wind Speed";
-// });
-
