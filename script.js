@@ -17,9 +17,13 @@ async function weather(city){
     let response = await fetch(apiurl + city + `&appid=${apikey}`);
 
     if(response.status == 404){
-        err.style.display="block";
-    }else{
-
+        err.style.display = "block";
+        temp.innerHTML = 0 + "°C";
+        cityname.innerHTML = "Find City";
+        humidity.innerHTML = 0+ "% <br> Humidity";
+        wind.innerHTML = 0 + "Km/h <br> Wind Speed";
+    }
+    else{
     let data = await response.json();
     console.log(data);
     temp.innerHTML=Math.round(data.main.temp) + "°C";
@@ -28,22 +32,22 @@ async function weather(city){
     wind.innerHTML=data.wind.speed + "Km/h <br> Wind Speed";
 
     if(data.weather[0].main == "Clouds"){
-        mainimg.src="./images/clouds.png";
+        mainimg.src="clouds.png";
     }
     else if(data.weather[0].main == "Clear"){
-        mainimg.src="./images/clear.png";
+        mainimg.src="clear.png";
     }
     else if(data.weather[0].main == "Mist"){
-        mainimg.src="./images/mist.png";
+        mainimg.src="mist.png";
     }
     else if(data.weather[0].main == "Drizzle"){
-        mainimg.src="./images/drizzle.png";
+        mainimg.src="drizzle.png";
     }
     else if(data.weather[0].main == "Rain"){
-        mainimg.src="./images/rain.png";
+        mainimg.src="rain.png";
     }
     else if(data.weather[0].main == "Snow"){
-        mainimg.src="./images/snow.png";
+        mainimg.src="snow.png";
     }
     err.style.display="none";
  }
@@ -52,4 +56,3 @@ async function weather(city){
 btn.addEventListener("click",()=>{
     weather(input.value);
 })
-
