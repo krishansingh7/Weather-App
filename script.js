@@ -21,7 +21,7 @@ async function weather(city){
         temp.innerHTML = 0 + "°C";
         cityname.innerHTML = "Find City";
         humidity.innerHTML = 0+ "% <br> Humidity";
-        wind.innerHTML = 0 + "Km/h <br> Wind Speed";
+        wind.innerHTML = 0 + " Km/h <br> Wind Speed";
     }
     else{
     let data = await response.json();
